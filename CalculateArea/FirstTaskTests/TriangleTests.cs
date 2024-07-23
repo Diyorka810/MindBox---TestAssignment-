@@ -33,7 +33,7 @@ namespace FirstTaskTests
             var triangle = new Triangle(firstLine, secondLine, thirdLine);
 
             //Act
-            var result = triangle.TryFindArea();
+            var result = triangle.Area;
 
             //Assert
             Assert.IsNotNull(result);
@@ -51,7 +51,7 @@ namespace FirstTaskTests
             var triangle = new Triangle(firstLine, secondLine, thirdLine);
 
             //Act
-            var result = triangle.TryFindArea();
+            var result = triangle.Area;
 
             //Assert
             Assert.IsNotNull(result);

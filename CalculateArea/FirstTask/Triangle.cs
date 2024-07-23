@@ -1,11 +1,12 @@
 ﻿namespace FirstTask
 {
-    public class Triangle : IArea
+    public class Triangle : IHasArea
     {
         public double FirstLine { get; init; }
         public double SecondLine { get; init; }
         public double ThirdLine { get; init; }
         public bool IsRightTriangle { get; init; }
+        public double Area { get; }
 
         public Triangle(double firstLine, double secondLine, double thirdLine)
         {
@@ -19,9 +20,10 @@
             this.SecondLine = secondLine;
             this.ThirdLine = thirdLine;
             this.IsRightTriangle = CheckIsRightTriangle();
+            this.Area = FindArea();
         }
 
-        public double TryFindArea()
+        public double FindArea()
         {
             var semiPerimeter = (FirstLine + SecondLine + ThirdLine) / 2;
             var square = Math.Sqrt(semiPerimeter 
@@ -48,7 +50,7 @@
 
             var squareHypotenuse = hypotenuse * hypotenuse;
             var sumSquaresLegs = lines[0] * lines[0] + lines[1] * lines[1];
-            var epsilon = 0.06;
+            var epsilon = 0.0006;
             var isRightTriangle = Math.Abs(squareHypotenuse - sumSquaresLegs) < epsilon;
 
             return isRightTriangle;

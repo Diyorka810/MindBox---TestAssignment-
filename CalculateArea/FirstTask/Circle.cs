@@ -1,8 +1,9 @@
 ﻿namespace FirstTask
 {
-    public class Circle : IArea
+    public class Circle : IHasArea
     {
-        public double Radius { get; set; }
+        public double Radius { get; init; }
+        public double Area { get; }
 
         public Circle(double radius)
         {
@@ -10,9 +11,10 @@
                 throw new ArgumentException("Radius can not be less than zero");
 
             this.Radius = radius;
+            this.Area = FindArea();
         }
 
-        public double TryFindArea()
+        public double FindArea()
         {
             var square = Math.PI * Radius * 2;
             return Math.Round(square, 7);

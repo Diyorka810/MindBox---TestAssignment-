@@ -15,7 +15,7 @@ namespace FirstTaskTests
             var circle = new Circle(radius);
 
             //Act
-            var result = circle.TryFindArea();
+            var result = circle.Area;
 
             //Assert
             Assert.IsNotNull(result);
